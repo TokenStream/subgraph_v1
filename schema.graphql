@@ -1,0 +1,45 @@
+type AdditionSuccessful @entity(immutable: true) {
+  id: Bytes!
+  user: Bytes! # address
+  _amount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type DeductionSuccessful @entity(immutable: true) {
+  id: Bytes!
+  user: Bytes! # address
+  _amount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type DepositSuccessful @entity(immutable: true) {
+  id: Bytes!
+  user: Bytes! # address
+  _amount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type TransferSuccessful @entity(immutable: true) {
+  id: Bytes!
+  sender: Bytes! # address
+  receiver: Bytes! # address
+  _amount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type WithdrawalSuccessful @entity(immutable: true) {
+  id: Bytes!
+  user: Bytes! # address
+  _amount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
