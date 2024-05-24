@@ -43,3 +43,121 @@ type WithdrawalSuccessful @entity(immutable: true) {
   blockTimestamp: BigInt!
   transactionHash: Bytes!
 }
+type StreamCreated @entity(immutable: true) {
+  id: Bytes!
+  streamId: BigInt! # uint256
+  recipient: Bytes! # address
+  intervalType: Int! # uint8
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type StreamPaused @entity(immutable: true) {
+  id: Bytes!
+  recipient: Bytes! # address
+  intervalType: Int! # uint8
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type StreamResumed @entity(immutable: true) {
+  id: Bytes!
+  recipient: Bytes! # address
+  intervalType: Int! # uint8
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type StreamStopped @entity(immutable: true) {
+  id: Bytes!
+  recipient: Bytes! # address
+  intervalType: Int! # uint8
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type disbursementSuccessful @entity(immutable: true) {
+  id: Bytes!
+  sender: Bytes! # address
+  recipient: Bytes! # address
+  amount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+type SubscriptionPaid @entity(immutable: true) {
+  id: Bytes!
+  from: Bytes! # address
+  to: Bytes! # address
+  fee: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type SubscriptionPaused @entity(immutable: true) {
+  id: Bytes!
+  subscriber: Bytes! # address
+  planId: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type SubscriptionPlanActivated @entity(immutable: true) {
+  id: Bytes!
+  planId: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type SubscriptionPlanCreated @entity(immutable: true) {
+  id: Bytes!
+  creator: Bytes! # address
+  planfee: BigInt! # uint256
+  planName: String! # string
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type SubscriptionPlanDeactivated @entity(immutable: true) {
+  id: Bytes!
+  planId: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type SubscriptionPlanUpdated @entity(immutable: true) {
+  id: Bytes!
+  creator: Bytes! # address
+  planfee: BigInt! # uint256
+  planName: String! # string
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type SubscriptionResumed @entity(immutable: true) {
+  id: Bytes!
+  subscriber: Bytes! # address
+  planId: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type SubscriptionStarted @entity(immutable: true) {
+  id: Bytes!
+  subscriber: Bytes! # address
+  planId: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}

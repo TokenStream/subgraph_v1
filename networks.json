@@ -3,6 +3,12 @@
     "ModalContract": {
       "address": "0x678b52B7CD9248B408B0BE5B49803B9622a9bf99",
       "startBlock": 5850109
+    },
+    "SalaryStreaming": {
+      "address": "0xb27a1aBd3C71EEa9A9a6D464C53687DC8600F03d"
+    },
+    "SubscriptionService": {
+      "address": "0x1056E2451aAC55859244D2d4Ca139F19b2a8a61e"
     }
   }
 }

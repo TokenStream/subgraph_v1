@@ -36,3 +36,76 @@ dataSources:
         - event: WithdrawalSuccessful(indexed address,uint256)
           handler: handleWithdrawalSuccessful
       file: ./src/modal-contract.ts
+  - kind: ethereum
+    name: SalaryStreaming
+    network: sepolia
+    source:
+      address: "0xb27a1aBd3C71EEa9A9a6D464C53687DC8600F03d"
+      abi: SalaryStreaming
+      startBlock: 5931572
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - StreamCreated
+        - StreamPaused
+        - StreamResumed
+        - StreamStopped
+        - disbursementSuccessful
+      abis:
+        - name: SalaryStreaming
+          file: ./abis/SalaryStreaming.json
+      eventHandlers:
+        - event: StreamCreated(indexed uint256,indexed address,uint8)
+          handler: handleStreamCreated
+        - event: StreamPaused(indexed address,uint8)
+          handler: handleStreamPaused
+        - event: StreamResumed(indexed address,uint8)
+          handler: handleStreamResumed
+        - event: StreamStopped(indexed address,uint8)
+          handler: handleStreamStopped
+        - event: disbursementSuccessful(address,address,uint256)
+          handler: handledisbursementSuccessful
+      file: ./src/salary-streaming.ts
+  - kind: ethereum
+    name: SubscriptionService
+    network: sepolia
+    source:
+      address: "0x1056E2451aAC55859244D2d4Ca139F19b2a8a61e"
+      abi: SubscriptionService
+      startBlock: 5942678
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - SubscriptionPaid
+        - SubscriptionPaused
+        - SubscriptionPlanActivated
+        - SubscriptionPlanCreated
+        - SubscriptionPlanDeactivated
+        - SubscriptionPlanUpdated
+        - SubscriptionResumed
+        - SubscriptionStarted
+      abis:
+        - name: SubscriptionService
+          file: ./abis/SubscriptionService.json
+      eventHandlers:
+        - event: SubscriptionPaid(address,address,uint256)
+          handler: handleSubscriptionPaid
+        - event: SubscriptionPaused(indexed address,uint256)
+          handler: handleSubscriptionPaused
+        - event: SubscriptionPlanActivated(uint256)
+          handler: handleSubscriptionPlanActivated
+        - event: SubscriptionPlanCreated(address,uint256,string)
+          handler: handleSubscriptionPlanCreated
+        - event: SubscriptionPlanDeactivated(uint256)
+          handler: handleSubscriptionPlanDeactivated
+        - event: SubscriptionPlanUpdated(address,uint256,string)
+          handler: handleSubscriptionPlanUpdated
+        - event: SubscriptionResumed(indexed address,uint256)
+          handler: handleSubscriptionResumed
+        - event: SubscriptionStarted(indexed address,uint256)
+          handler: handleSubscriptionStarted
+      file: ./src/subscription-service.ts
